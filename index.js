@@ -19,7 +19,7 @@ app.get('/api/products', async(req, res) => {
     }
 });
 
-// api to get product by id
+// api to get a single product by id
 app.get('/api/product/:id', async(req, res) => {
     try {
         const { id } = req.params
