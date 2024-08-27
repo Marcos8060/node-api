@@ -19,6 +19,17 @@ app.get('/api/products', async(req, res) => {
     }
 });
 
+// api to get product by id
+app.get('/api/product/:id', async(req, res) => {
+    try {
+        const { id } = req.params
+        const singleProduct = await product.findById(id);
+        res.status(200).json(singleProduct);
+    } catch (error) {
+        res.status(500).json({ message: error.message})
+    }
+})
+
 app.post('/api/products', async(req, res) => {
     try {
         const productItem = await product.create(req.body)
