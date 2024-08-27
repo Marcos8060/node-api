@@ -12,7 +12,7 @@ const productSchema = mongoose.Schema(
       default: 0,
     },
     price: {
-      ype: Number,
+      type: Number,
       required: true,
       default: 0,
     },
